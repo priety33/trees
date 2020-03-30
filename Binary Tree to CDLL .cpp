@@ -7,7 +7,7 @@ Node *bTreeToCList(Node *root)
    {
        lhead=bTreeToCList(root->left);
        Node* ltail=lhead->left; //lhead->left will never be null because above we have taken lhead as cll, and even in case of
-                                one node, lhead->left=lhead
+                                //one node, lhead->left=lhead
        ltail->right=root;
        root->left=ltail;
    }
@@ -15,7 +15,7 @@ Node *bTreeToCList(Node *root)
    {
        Node* rhead=bTreeToCList(root->right);
        rtail=rhead->left; //rhead->left will never be null because above we have taken rhead as cll, and even in case of
-                             one node, rhead->left=rhead
+                          //one node, rhead->left=rhead
        root->right=rhead;
        rhead->left=root;
    }
