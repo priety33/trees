@@ -19,8 +19,8 @@ Node *bTreeToCList(Node *root)
        root->right=rhead;
        rhead->left=root;
    }
-   lhead->left=rtail;   // left pointer even if one node is in tree will not be NULL
+   lhead->left=rtail;   // left pointer even if one node is in tree will not be NULL 
    rtail->right=lhead;  // right pointer in case of one node will not be NULL
-   
+                        //=> left and right of single node will point to itself
    return lhead;
 }
