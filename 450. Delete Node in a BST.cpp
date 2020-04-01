@@ -3,7 +3,8 @@ public:
     TreeNode* deleteNode(TreeNode* root, int key) {
         if(!root) return NULL;
         
-        if(key>root->val) root->right=deleteNode(root->right, key);
+        if(key>root->val) root->right=deleteNode(root->right, key); // root->right will change after deletion of the node,
+                                                                   //therefore we need to attach returned value=> root->right=delete(root->right)
         else if(key<root->val) root->left=deleteNode(root->left, key);
         else
         {
