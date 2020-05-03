@@ -1,0 +1,21 @@
+long long int helper(BinaryTreeNode<int>* root,long long int& maxsum){
+    
+    if(root==NULL){
+        return 0;
+    }
+    
+    long long int leftans=helper(root->left,maxsum);
+    long long int rightans=helper(root->right,maxsum);
+    
+    long long int currsum=leftans+rightans+root->data;
+    
+    maxsum=max(currsum,maxsum);
+    
+    return max(leftans,rightans)+root->data;
+}
+
+long long int maximumSumLeafpath(BinaryTreeNode<int> *root){
+    long long int maxsum=INT_MIN;
+    helper(root,maxsum);
+    return maxsum;
+}
