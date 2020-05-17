@@ -20,3 +20,13 @@ public:
         return ans;
     }
 };
+
+
+//OR just keep count of maximum val
+class Solution {
+public:
+    
+    int goodNodes(TreeNode* root, int val=INT_MIN) {
+        return root == nullptr ? 0 : (val <= root->val)  + goodNodes(root->left, max(root->val, val)) + goodNodes(root->right, max(root->val, val));
+    }
+};
